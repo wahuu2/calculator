@@ -14,6 +14,43 @@ body {
   height: 100vh;
 }
 
+/* Container */
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.calculator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+  margin-bottom: 15px;
+}
+
+.calculator-header h1 {
+  font-size: 20px;
+  color: #5c4033;
+  margin: 0;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #a0522d;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #8b4513;
+}
+
 /* Calculator grid */
 .calculator-grid {
   display: grid;
@@ -28,7 +65,7 @@ body {
   box-shadow: 0 6px 14px rgba(92, 64, 51, 0.25);
 }
 
-/* Output display */
+/* Output */
 .output {
   grid-column: 1 / -1;
   background: #f4e1d2;
@@ -38,8 +75,6 @@ body {
   align-items: flex-end;
   justify-content: space-around;
   padding: 10px;
-  word-wrap: break-word;
-  word-break: break-all;
 }
 
 .previous-operand {
@@ -66,11 +101,11 @@ button:hover {
   background: #d2b48c;
 }
 
-/* Special buttons */
 .span-two {
   grid-column: span 2;
 }
 
+/* Special buttons */
 [data-operation] {
   background: #a0522d;
   color: white;
@@ -107,40 +142,7 @@ button:hover {
   background: #8b4513;
 }
 
-/* Responsive design */
-@media (max-width: 500px) {
-  .calculator-grid {
-    grid-template-columns: repeat(4, 60px);
-    grid-template-rows: minmax(80px, auto) repeat(5, 60px);
-  }
-
-  button {
-    font-size: 1.2rem;
-  }
-
-  .current-operand {
-    font-size: 1.6rem;
-  }
-}
-/* Base styles remain the same */
-
-/* Theme toggle button */
-#theme-toggle {
-  margin-bottom: 15px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 8px;
-  background: #a0522d;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#theme-toggle:hover {
-  background: #8b4513;
-}
-
-/* Dark mode styles */
+/* Dark mode */
 body.dark {
   background: linear-gradient(135deg, #2e2e2e, #1c1c1c);
 }
@@ -201,4 +203,43 @@ body.dark [data-delete] {
 
 body.dark [data-delete]:hover {
   background: #5c0000;
+}
+/* Smooth transition for theme changes */
+body, 
+.calculator-grid, 
+.output, 
+button {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+/* Theme toggle button */
+#theme-toggle {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #a0522d;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background: #8b4513;
+  transform: scale(1.1); /* gentle zoom effect */
+}
+
+
+/* Responsive design */
+@media (max-width: 500px) {
+  .calculator-grid {
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: minmax(80px, auto) repeat(5, 60px);
+  }
+
+  button {
+    font-size: 1.2rem;
+  }
+
+  .current-operand {
+    font-size: 1.6rem;
+  }
 }
