@@ -122,3 +122,83 @@ button:hover {
     font-size: 1.6rem;
   }
 }
+/* Base styles remain the same */
+
+/* Theme toggle button */
+#theme-toggle {
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #a0522d;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #8b4513;
+}
+
+/* Dark mode styles */
+body.dark {
+  background: linear-gradient(135deg, #2e2e2e, #1c1c1c);
+}
+
+body.dark .calculator-grid {
+  background: #2b2b2b;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
+
+body.dark .output {
+  background: #1c1c1c;
+}
+
+body.dark .previous-operand {
+  color: #aaa;
+}
+
+body.dark .current-operand {
+  color: #fff;
+}
+
+body.dark button {
+  background: #444;
+  color: #fff;
+}
+
+body.dark button:hover {
+  background: #555;
+}
+
+body.dark [data-operation] {
+  background: #6d4c41;
+}
+
+body.dark [data-operation]:hover {
+  background: #5c4033;
+}
+
+body.dark [data-equals] {
+  background: #3e2723;
+}
+
+body.dark [data-equals]:hover {
+  background: #2c1810;
+}
+
+body.dark [data-all-clear] {
+  background: #b71c1c;
+}
+
+body.dark [data-all-clear]:hover {
+  background: #7f0000;
+}
+
+body.dark [data-delete] {
+  background: #8b0000;
+}
+
+body.dark [data-delete]:hover {
+  background: #5c0000;
+}
