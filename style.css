@@ -1,0 +1,124 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #8b5e3c, #c4a484); /* chestnut to tan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Calculator grid */
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  gap: 10px;
+  background: #fffaf3;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(92, 64, 51, 0.25);
+}
+
+/* Output display */
+.output {
+  grid-column: 1 / -1;
+  background: #f4e1d2;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous-operand {
+  color: #7b5e57;
+  font-size: 1.2rem;
+}
+
+.current-operand {
+  color: #5c4033;
+  font-size: 2rem;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 8px;
+  background: #e6ccb2;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #d2b48c;
+}
+
+/* Special buttons */
+.span-two {
+  grid-column: span 2;
+}
+
+[data-operation] {
+  background: #a0522d;
+  color: white;
+}
+
+[data-operation]:hover {
+  background: #8b4513;
+}
+
+[data-equals] {
+  background: #5c4033;
+  color: white;
+}
+
+[data-equals]:hover {
+  background: #3e2723;
+}
+
+[data-all-clear] {
+  background: #ff4d4d;
+  color: white;
+}
+
+[data-all-clear]:hover {
+  background: #cc0000;
+}
+
+[data-delete] {
+  background: #b5651d;
+  color: white;
+}
+
+[data-delete]:hover {
+  background: #8b4513;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+  .calculator-grid {
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: minmax(80px, auto) repeat(5, 60px);
+  }
+
+  button {
+    font-size: 1.2rem;
+  }
+
+  .current-operand {
+    font-size: 1.6rem;
+  }
+}
